@@ -1,0 +1,36 @@
+---
+pagetitle: "Ensemble: Fiction Engine RPG"
+description: "A narrative-first tabletop RPG engine for two or more players."
+page-layout: full
+sidebar: false
+format:
+  html:
+    toc: false
+format-links: false
+---
+
+::: {.text-center .py-5}
+# [Ensemble]{style="font-family: 'Takota', sans-serif; font-weight: normal; font-size: 2em; line-height: 1;"}
+
+## [Fiction Engine RPG]{style="font-family: 'Raleway', sans-serif; font-weight: 900;"}
+
+© 2024-2026 Roberto Bisceglie
+:::
+
+**Ensemble** is a narrative-first tabletop RPG for two or more players. It shares its foundation with *Loner*: the same Oracle, the same Tags, the same six outcomes. You describe what your character does, the world reacts, and the dice come in only when the outcome is uncertain or dangerous.
+
+Play it with a GM, or GM-less with the Oracle filling the gaps. All you need is a handful of six-sided dice and something to write with.
+
+Based on [Freeform Universal](https://www.perilplanet.com/freeform-universal/) by Nathan Russell.
+
+---
+
+Ensemble is a product of [**Zotiquest Games**](https://zotiquestgames.com)
+
+## Web SRD
+
+The texts of the SRD will appear here as they are published.
+
+## License
+
+**Ensemble** is based on materials released under a Creative Commons license and is distributed under a **CC-BY-SA-4.0** license: use it, hack it, make your own edition!
