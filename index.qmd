@@ -29,7 +29,19 @@ Ensemble is a product of [**Zotiquest Games**](https://zotiquestgames.com)
 
 ## Web SRD
 
-The texts of the SRD will appear here as they are published.
+::: {.grid .gap-4 .py-4}
+
+::: {.g-col-12 .g-col-md-6}
+::: {.card .p-4 .h-100 .shadow-sm}
+#### Core Rules
+
+The complete text of *Ensemble 2e*, free and in full.
+
+[Read the Core Rules](core/ensemble-2e.md){.btn .btn-outline-primary .mt-3}
+:::
+:::
+
+:::
 
 ## License
 
