@@ -1,0 +1,33 @@
+// Relationships: from a phrase at creation to a tag earned in play
+// (ensemble-2e.md, Relationships, When to Promote a Tag to a Character,
+// The Living World). New in Ensemble.
+digraph relationships {
+    label = "RELATIONSHIPS";
+    labelloc = "t";
+    fontname = "Permanent Marker";
+    node [shape="rect", fontname="Permanent Marker", fontsize=12];
+    edge [fontname="Permanent Marker", fontsize=12];
+    dpi = 300;
+    bgcolor = white;
+
+    phrase  [label = "AT CREATION:\nA PHRASE, NOT A TAG\n(NO DICE)"];
+    tested  [label = "DOES PLAY TEST, STRAIN\nOR DEEPEN IT?"];
+    earn    [label = "IT EARNS A TAG\nTRUSTED ALLY, SWORN ENEMY,\nUNEASY TRUCE, OWES ME A DEBT"];
+    dice    [label = "THE TAG ADDS A CHANCE\nOR RISK DIE ONLY WHEN\nIT BEARS ON THE ACTION"];
+    shift   [label = "DOES A SCENE SHIFT HOW\nTHE TWO STAND?"];
+    grow    [label = "DEEPEN, SPLIT\nOR REPLACE THE TAG"];
+    gone    [label = "BETWEEN ADVENTURES:\nIS THE NPC GONE\nFOR GOOD?"];
+    history [label = "RECORD IT AS HISTORY,\nREMOVE IT FROM PLAY"];
+    promote [label = "AN NPC OR FACTION KEEPS\nCOMING BACK, IN COMPLEX WAYS?\nPROMOTE IT TO A CHARACTER"];
+
+    phrase -> tested;
+    tested -> phrase [label = "Not yet", style = dashed];
+    tested -> earn [label = "Yes"];
+    earn -> dice -> shift;
+    shift -> grow [label = "Yes"];
+    grow -> dice;
+    shift -> gone [label = "Adventure ends"];
+    gone -> history [label = "Yes"];
+    gone -> dice [label = "No: update the tag", style = dashed];
+    earn -> promote [style = dotted];
+}

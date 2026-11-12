@@ -1,0 +1,29 @@
+// The Scene Loop in one diagram (ensemble-2e.md, Framing a Scene, The
+// Scene Loop, When to Roll, Closing a Scene). Loner 4e uses four.
+digraph scene_loop {
+    label = "THE SCENE LOOP";
+    labelloc = "t";
+    fontname = "Permanent Marker";
+    node [shape="rect", fontname="Permanent Marker", fontsize=12];
+    edge [fontname="Permanent Marker", fontsize=12];
+    dpi = 300;
+    bgcolor = white;
+
+    frame  [label = "FRAME THE SCENE\nWHERE? WHO? WHAT?"];
+    expect [label = "1. SET YOUR EXPECTATION\nTRAITS, GOALS, SITUATION:\nHOW WILL THE WORLD REACT?"];
+    test   [label = "2. TEST THE UNCERTAINTY\nIS THE OUTCOME OBVIOUS?"];
+    fict   [label = "LET THE FICTION\nRESOLVE IT"];
+    pool   [label = "NAME WHAT THE FICTION\nSUGGESTS, BUILD THE POOL\nAND ROLL"];
+    interp [label = "3. INTERPRET THE RESULT\nCONFIRM OR SUBVERT\nTHE EXPECTATION"];
+    close  [label = "4. IS THE GOAL RESOLVED,\nBLOCKED OR ABANDONED?"];
+    trans  [label = "NOTE THE OUTCOME,\nROLL THE SCENE TRANSITION"];
+
+    frame -> expect -> test;
+    test -> fict [label = "Yes"];
+    test -> pool [label = "No"];
+    pool -> interp;
+    fict -> close;
+    interp -> close;
+    close -> trans [label = "Yes"];
+    close -> expect [label = "No: next action", style = dashed];
+}

@@ -1,0 +1,35 @@
+// Scene Transition (ensemble-2e.md, Scene Transition; GM-less Play).
+// Adapted from Loner 4e's "Scene Transition": who rolls, and Meanwhile
+// rotating in GM-less play.
+digraph scene_transition {
+    label = "SCENE TRANSITION";
+    labelloc = "t";
+    fontname = "Permanent Marker";
+    node [shape="rect", fontname="Permanent Marker", fontsize=12];
+    edge [fontname="Permanent Marker", fontsize=12];
+    dpi = 300;
+    bgcolor = white;
+
+    roll   [label = "THE GM ROLLS 1D6\n(GM-LESS: THE GROUP)"];
+    drama  [label = "DRAMATIC (1-3)\nSTAKES RISE:\nNAME WHAT'S PRESSING"];
+    quiet  [label = "QUIET (4-5)\nTHE CHARACTERS\nTAKE THE INITIATIVE"];
+    mean   [label = "MEANWHILE (6)"];
+    rotate [label = "GM-LESS: WHO RUNS\nMEANWHILE ROTATES"];
+    opp    [label = "UPDATE THE OPPOSITION:\nWHAT DO THEY DO NEXT?\nUPDATE THEIR TAGS"];
+    ally   [label = "ASK THE ORACLE:\nDOES AN ALLY ACT\nINDEPENDENTLY?"];
+    acts   [label = "THE NPC MOST AFFECTED\nACTS THROUGH THEIR\nTAGS AND GOAL"];
+    hold   [label = "THEY HOLD"];
+    next   [label = "FRAME THE NEXT SCENE"];
+
+    roll -> drama [label = "1-3"];
+    roll -> quiet [label = "4-5"];
+    roll -> mean [label = "6"];
+    mean -> rotate [style = dotted];
+    mean -> opp -> ally;
+    ally -> acts [label = "Yes"];
+    ally -> hold [label = "No"];
+    drama -> next;
+    quiet -> next;
+    acts -> next;
+    hold -> next;
+}

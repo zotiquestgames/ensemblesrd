@@ -1,0 +1,39 @@
+// Group Conflicts: one exchange of a Zoom In conflict with several PCs
+// (ensemble-2e.md, Group Conflicts). New in Ensemble.
+digraph group_conflict {
+    label = "GROUP CONFLICT: ONE EXCHANGE";
+    labelloc = "t";
+    fontname = "Permanent Marker";
+    node [shape="rect", fontname="Permanent Marker", fontsize=12];
+    edge [fontname="Permanent Marker", fontsize=12];
+    dpi = 300;
+    bgcolor = white;
+
+    who     [label = "BEFORE THE EXCHANGE:\nWHO ROLLS,\nWHO SUPPORTS?"];
+    turn    [label = "ACTING IN TURN\nEACH PC ROLLS THEIR\nOWN CLOSED QUESTION,\nIN THE FICTION'S ORDER"];
+    carry   [label = "A YES, AND...\nCARRIES FORWARD:\nTHE NEXT PC GAINS\nA CHANCE DIE"];
+    support [label = "SUPPORTING AN ALLY\nONE PC ROLLS,\nTHE OTHERS SUPPORT"];
+    one     [label = "+1 CHANCE DIE FOR ONE\nCONTRIBUTION, HOWEVER\nMANY HELP\n(NAME WHO GIVES IT)"];
+    hl      [label = "HARM & LUCK?"];
+    nohl    [label = "SUCCESS MOVES THE GROUP\nTOWARD ITS GOAL\nFAILURE: A CONSEQUENCE\nFOR THE ROLLER AND\nEVERY SUPPORTER"];
+    won     [label = "HAS ONE SIDE WON\nIN THE FICTION?"];
+    yeshl   [label = "LUCK IS PER CHARACTER\nSUCCESS: HARM TO THE TARGET\nFAILURE: HARM TO THE ROLLER\nAND TO THE SUPPORTER\nWHO GAVE THE DIE"];
+    out     [label = "A PC AT 0 LUCK IS OUT\nOF THIS CONFLICT"];
+    over    [label = "EVERY OPPONENT AT 0,\nOR EVERY PC DEFEATED\nOR DISENGAGED?"];
+    ends    [label = "THE CONFLICT ENDS"];
+
+    who -> turn [label = "Each acts"];
+    who -> support [label = "All together"];
+    turn -> carry [style = dotted];
+    support -> one;
+    turn -> hl;
+    one -> hl;
+    hl -> nohl [label = "No"];
+    hl -> yeshl [label = "Yes"];
+    nohl -> won;
+    yeshl -> out -> over;
+    won -> ends [label = "Yes"];
+    over -> ends [label = "Yes"];
+    won -> who [label = "No: next exchange", style = dashed];
+    over -> who [label = "No: next exchange", style = dashed];
+}

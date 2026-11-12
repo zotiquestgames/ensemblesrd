@@ -1,0 +1,46 @@
+// Conflicts: Zoom Out / Zoom In and the optional Harm & Luck layer
+// (ensemble-2e.md, Conflict and Consequences). Adapted from Loner 4e's
+// "Conflicts" and "Harm & Luck"; several PCs: see 03_group_conflict.dot.
+digraph conflicts {
+    label = "CONFLICTS";
+    labelloc = "t";
+    fontname = "Permanent Marker";
+    node [shape="rect", fontname="Permanent Marker", fontsize=12];
+    edge [fontname="Permanent Marker", fontsize=12];
+    dpi = 300;
+    bgcolor = white;
+    nodesep = 0.3;
+    ranksep = 0.35;
+
+    opp    [label = "IS ANYONE\nOPPOSING THE\nCHARACTERS?"];
+    closed [label = "ASK A CLOSED\nQUESTION"];
+    scale  [label = "ZOOM OUT\nOR ZOOM IN?"];
+    out    [label = "ZOOM OUT\nONE CLOSED\nQUESTION FOR\nTHE CONFLICT"];
+    zin    [label = "ZOOM IN\nONE CLOSED\nQUESTION PER\nACTION OR PHASE"];
+    group  [label = "SEVERAL PCS?\nSEE GROUP\nCONFLICT"];
+    track  [label = "TRACK\nATTRITION?"];
+    plain  [label = "READ EACH\nRESULT AS FOR\nANY QUESTION"];
+    luck   [label = "HARM & LUCK\nEVERYONE STARTS\nAT 6 LUCK; ASK\nFROM THE PC'S\nPOINT OF VIEW"];
+    harm   [label = "APPLY LUCK DAMAGE\nYES, AND... → DEAL 3\nYES... → DEAL 2\nYES, BUT... → DEAL 1\nNO, BUT... → TAKE 1\nNO... → TAKE 2\nNO, AND... → TAKE 3"];
+    zero   [label = "IS EITHER SIDE\nAT 0 LUCK?"];
+    ends   [label = "THE CONFLICT IS OVER:\nTHE STORY SAYS\nWHAT DEFEAT MEANS"];
+
+    opp -> closed [label = "No"];
+    {rank = same; opp; closed;}
+    opp -> scale [label = "Yes"];
+    scale -> out [label = "Fast"];
+    {rank = same; scale; out;}
+    scale -> zin [label = "Step by step"];
+    zin -> group [style = dotted];
+    {rank = same; zin; group;}
+    zin -> track;
+    track -> plain [label = "No"];
+    {rank = same; track; plain;}
+    track -> luck [label = "Yes"];
+    luck -> harm;
+    {rank = same; luck; harm;}
+    harm -> zero;
+    zero -> ends [label = "Yes"];
+    {rank = same; zero; ends;}
+    zero -> luck [label = "No: next question", style = dashed];
+}

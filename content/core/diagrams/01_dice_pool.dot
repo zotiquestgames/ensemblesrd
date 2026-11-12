@@ -1,0 +1,48 @@
+// Resolving Actions: the Dice Pool Procedure, the Twist Counter and
+// "When the Result Is Unclear" (ensemble-2e.md, How to Play).
+// Ensemble's replacement for Loner 4e's "Consulting the Oracle".
+digraph dice_pool {
+    label = "THE DICE POOL";
+    labelloc = "t";
+    fontname = "Permanent Marker";
+    node [shape="rect", fontname="Permanent Marker", fontsize=12];
+    edge [fontname="Permanent Marker", fontsize=12];
+    dpi = 300;
+    bgcolor = white;
+    nodesep = 0.2;
+    ranksep = 0.3;
+
+    act   [label = "A CHARACTER ACTS"];
+    roll  [label = "UNCERTAIN, AND\nFAILURE MATTERS?"];
+    frame [label = "1. FRAME A YES/NO\nQUESTION (YES IS THE\nFAVORABLE OUTCOME)"];
+    name  [label = "2. NAME WHAT THE\nFICTION SUGGESTS"];
+    build [label = "3. BUILD THE POOL\nTHE ACTION DIE\n+1 CHANCE DIE\nPER ADVANTAGE\n+1 RISK DIE\nPER DISADVANTAGE"];
+    cancel [label = "CANCEL CHANCE AND\nRISK DICE 1-FOR-1"];
+    high  [label = "4. ROLL ALL,\nKEEP THE\nHIGHEST"];
+    alone [label = "4. ROLL THE\nACTION DIE\nALONE"];
+    low   [label = "4. ROLL ALL,\nKEEP THE\nLOWEST"];
+    read  [label = "5. READ THE RESULT\n6 YES, AND...\n5 YES...\n4 YES, BUT...\n3 NO, BUT...\n2 NO...\n1 NO, AND..."];
+    twist [label = "YES, BUT...:\n+1 TWIST COUNTER\n(NOT DURING\nHARM & LUCK)\nAT 3: A TWIST\n(2D6 ON THE\nTWIST TABLE),\nRESET TO 0"];
+    clear [label = "IS THE ANSWER CLEAR?"];
+    stuck [label = "REFRAME IT, ASK AGAIN\n(3 QUESTIONS AT MOST)\nOR USE THE\nINSPIRATION TABLES"];
+    tell  [label = "DESCRIBE WHAT HAPPENS"];
+
+    act -> roll;
+    roll -> tell [label = "No"];
+    roll -> frame [label = "Yes"];
+    frame -> name -> build -> cancel;
+    cancel -> high [label = "Chance\nDice left"];
+    cancel -> alone [label = "None\nleft"];
+    cancel -> low [label = "Risk\nDice left"];
+    {rank = same; high -> alone -> low [style = invis];}
+    high -> read;
+    alone -> read;
+    low -> read;
+    read -> twist [label = "Yes, but..."];
+    {rank = same; read; twist;}
+    read -> clear;
+    clear -> tell [label = "Yes"];
+    clear -> stuck [label = "No"];
+    stuck -> tell [style = dashed];
+    tell -> act [label = "Next action", style = dashed];
+}

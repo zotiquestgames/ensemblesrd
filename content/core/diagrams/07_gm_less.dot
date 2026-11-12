@@ -1,0 +1,30 @@
+// GM-less Play: the two structures and the rules they share
+// (ensemble-2e.md, GM-less Play; Appendix C, Step 1). New in Ensemble.
+digraph gm_less {
+    label = "GM-LESS PLAY";
+    labelloc = "t";
+    fontname = "Permanent Marker";
+    node [shape="rect", fontname="Permanent Marker", fontsize=12];
+    edge [fontname="Permanent Marker", fontsize=12];
+    dpi = 300;
+    bgcolor = white;
+
+    choose  [label = "BEFORE THE SESSION:\nCHOOSE A STRUCTURE"];
+    host    [label = "ROTATING SCENE HOST\n(BEST FOR A FIRST SESSION)"];
+    hostdo  [label = "THE HOST FRAMES THE SCENE,\nVOICES NPCS AND NARRATES\nTHE WORLD'S RESPONSES"];
+    pass    [label = "THE SCENE CLOSES:\nTHE SEAT PASSES CLOCKWISE\nOR TO A VOLUNTEER"];
+    coll    [label = "FULLY COLLECTIVE"];
+    colldo  [label = "ANYONE FRAMES A SCENE,\nVOICES AN NPC OR NARRATES;\nBRIEF TABLE CONSENSUS"];
+    rules   [label = "BOTH STRUCTURES:\nNO ONE RESOLVES THEIR OWN\nUNCERTAIN ACTION WITHOUT ROLLING\nMEANWHILE ROTATES\nNPCS BELONG TO THE SCENE,\nNOT TO A PLAYER"];
+    dispute [label = "WHEN THE TABLE CAN'T SETTLE\nAN INTERPRETATION"];
+    oracle  [label = "ASK THE ORACLE AND ROLL\nYES: THE READING THAT\nFAVORS THE CHARACTERS\nNO: THE ONE THAT DOESN'T"];
+
+    choose -> host;
+    choose -> coll;
+    host -> hostdo -> pass;
+    coll -> colldo;
+    pass -> rules;
+    colldo -> rules;
+    rules -> dispute;
+    dispute -> oracle;
+}

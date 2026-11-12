@@ -1,0 +1,38 @@
+// Sample web of Appendix C, Step 2 (three PCs, their relationship phrases,
+// the NPCs they name and the open threads of the running list, Step 3).
+// Only links the text states. As Loner 4e's "Sample Web".
+graph eldoria_web {
+    label = "SAMPLE WEB: THE ELDORIA GROUP";
+    labelloc = "t";
+    fontname = "Permanent Marker";
+    node [shape="rect", fontname="Permanent Marker", fontsize=12];
+    edge [fontname="Permanent Marker", fontsize=12];
+    dpi = 300;
+    bgcolor = white;
+    nodesep = 0.15;
+    ranksep = 0.45;
+
+    thorin    [label = "THORIN\nDWARVEN\nWARRIOR"];
+    seraphine [label = "SERAPHINE\nHUMAN MAGE"];
+    varik     [label = "VARIK\nHALF-ELF ROGUE"];
+    {rank = same; thorin; seraphine; varik;}
+
+    merchant  [label = "A MERCHANT\nHE TRUSTS"];
+    contact   [label = "HER CONTACT\nAT THE\nGLASS TOWERS"];
+    smuggler  [label = "A SMUGGLER"];
+    {rank = same; merchant; contact; smuggler;}
+
+    t1 [label = "OPEN THREAD:\nCULT RUMORS\nIN THE\nMERCHANTS'\nQUARTER"];
+    t2 [label = "OPEN THREAD:\nTHE CONTACT\nWENT SILENT"];
+    t3 [label = "OPEN THREAD:\nTHE SMUGGLER\nDEBT"];
+    brother [label = "THE\nBROTHERHOOD\nOF BLOOD"];
+    {rank = same; t1; t2; t3; brother;}
+
+    thorin -- merchant [label = "heard\nthe rumors\nfrom"];
+    seraphine -- contact [label = "lost touch"];
+    varik -- smuggler [label = "owes\na debt to"];
+    merchant -- t1;
+    contact -- t2;
+    smuggler -- t3;
+    smuggler -- brother [label = "tied to"];
+}
