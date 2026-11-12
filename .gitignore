@@ -20,6 +20,7 @@
 # scripts/sync_content.py (see project: pre-render: in _quarto.yml).
 # content/ is the tracked source of truth -- these are build output.
 # Add one line per collection folder here when a collection is added.
+/core/
 /diagrams/
 /_sidebar-auto.yml
 

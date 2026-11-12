@@ -51,21 +51,23 @@ VERSION = "2.0"
 # filename, title derived from H1) -- this is what makes newly-synced files
 # show up in nav without editing this file.
 COLLECTIONS = [
-    # Empty until the first Ensemble text is promoted to ensemble/docs/ in
-    # zotiquestgames/loner. Shape of an entry (see the lonersrd copy of
-    # this script for a full example):
-    # {
-    #     "folder": "core",
-    #     "section": "SRD",
-    #     "curated": [("ensemble-2e-srd.md", "Ensemble 2e SRD")],
-    # },
+    {
+        "folder": "core",
+        "section": "Core Rules",
+        "curated": [
+            ("ensemble-2e.md", "Ensemble 2e"),
+        ],
+    },
 ]
 
 # Document title/subtitle overrides, independent of sidebar labels (most
 # pages derive their title from their own H1, which is usually what you
 # want -- this is only for pages whose H1 doesn't match their real title,
 # or that need a subtitle).
-DOC_OVERRIDES = {}
+DOC_OVERRIDES = {
+    # The rulebook opens on "# Introduction" (its H1s are the parts).
+    "core/ensemble-2e.md": ("Ensemble 2e", "Fiction Engine RPG"),
+}
 
 FRONTMATTER_TMPL = """---
 title: "{title}"{subtitle_line}
@@ -108,6 +110,10 @@ FRONTMATTER_BLOCK_RE = re.compile(r"^---\n.*?\n---\n+", re.DOTALL)
 # it here so the site can't break on this again regardless of what
 # upstream ships.
 DIAGRAMS_PATH_RE = re.compile(r"(?:\.\./)*(?:docs/)?diagrams/")
+
+# Page breaks placed for the 6 x 9 in print layout (loner/_layout); on the
+# web and in the Letter-size exports here they leave half-empty pages.
+PAGEBREAK_RE = re.compile(r"^[ \t]*\{\{<\s*pagebreak\s*>\}\}[ \t]*\n?", re.M)
 
 
 def normalize_diagram_paths(body, depth):
@@ -284,6 +290,7 @@ def main():
         depth = len(Path(rel).parts) - 1
         body = strip_frontmatter(src.read_text(encoding="utf-8"))
         body = normalize_diagram_paths(body, depth)
+        body = PAGEBREAK_RE.sub("", body)
         title = title_for(rel)
         _, subtitle = frontmatter_for(rel)
         subtitle_line = f'\nsubtitle: "{subtitle}"' if subtitle else ""
