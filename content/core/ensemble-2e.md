@@ -32,6 +32,7 @@ _Ensemble_ and _Loner_ share Chance and Risk dice, Tags, and the same six-outcom
 > **Using Loner Adventure Packs and Characters**
 >
 > Loner Adventure Packs, NPCs, and character sheets carry over with these adjustments:
+>
 > - **Dice:** Replace Loner's Chance Die + Risk Die comparison with Ensemble's dice pool. Tags marked as advantages become Chance Dice; disadvantages become Risk Dice.
 > - **Twist Counter:** The counter and its threshold of 3 carry over, but use Ensemble's trigger: every _Yes, but..._ result adds 1, not just doubles.
 > - **Harm & Luck:** Works as in Loner. Every character, PC or NPC, starts each conflict at 6 Luck.
@@ -1827,6 +1828,7 @@ The message exists because the world kept moving while they were at the docks. S
 Your first GM-less session should run ninety minutes to two hours. Stop when the host seat has rotated two or three full times, or when a natural pause arrives: a conflict resolved, a revelation landed, a cliffhanger reached.
 
 After the session, before anything else, update your running list:
+
 - Which NPC tags changed? What do they want now?
 - Which relationship tags were assigned or updated?
 - Which open threads are still live?
@@ -1991,23 +1993,27 @@ Ascend the tower, retrieve the Heart, and stop the storm before Oakhaven is dest
 ### Locations
 
 **1. The Base of the Tower**
+
 - **Tags:** Buried in Mud, Howling Winds, Cyclopean Masonry
-- **Obstacle:** The entrance is sealed, but the storm has loosened high windows.
-- **Question:** "Can we find a way inside without being swept away?"
+- **Obstacle:** Sealed door; storm-loosened high windows.
+- **Question:** "Can we get in without being swept away?"
 
 **2. The Library of Echoes (Mid-Level)**
+
 - **Tags:** Floating Books, Unsettling Whispers, Zero Gravity Pockets
 - **Obstacle:** No stairs. The Whispers try to confuse characters with false memories (Risk: Confused).
 - **Question:** "Do the books contain a map to the top?"
 
 **3. The Storm Apex (The Roof)**
-- **Tags:** Crackling Lightning, Slippery Tiles, The Eye of the Storm
+
+- **Tags:** Crackling Lightning, Slippery Tiles, Eye of the Storm
 - **Obstacle:** The **Storm Guardian** protects the Heart.
-- **Question:** "Can we seize the Heart before the lightning strikes?"
+- **Question:** "Can we seize the Heart before lightning hits?"
 
 ### NPCs and Threats
 
 **Elder Kaelen (Quest Giver)**
+
 - **Concept:** Village Elder
 - **Skills:** Knowledge of Old Lore
 - **Frailty:** Infirm
@@ -2015,6 +2021,7 @@ Ascend the tower, retrieve the Heart, and stop the storm before Oakhaven is dest
 - **Role:** Provides the hook and warns of the Whispers.
 
 **The Storm Guardian (Nemesis)**
+
 - **Concept:** Elemental Construct
 - **Skills:** Made of Thunder, Deafening Voice
 - **Frailty:** Weak to Earth Magic
@@ -2024,7 +2031,7 @@ Ascend the tower, retrieve the Heart, and stop the storm before Oakhaven is dest
 
 1. **Thorin:** "Why do you owe Elder Kaelen a life-debt?"
 2. **Seraphine:** "What rumor did you hear about the Heart's true power that you haven't told the others?"
-3. **Varik:** "You stole something from this Tower years ago. What was it?"
+3. **Varik:** "What did you steal from this Tower years ago?"
 4. **Lirael:** "The forest around Oakhaven is dying. What does that tell you that the others can't sense?"
 5. **Aelwyn:** "You treated someone from Oakhaven recently. What did they tell you before they died?"
 
